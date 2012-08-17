@@ -1,0 +1,229 @@
+section#home.slide
+  .img-home
+    h1.title El espiritu del CopyLeft vive en LatinoAmerica
+    h2.title= title
+section.slide.frame
+  h2.title Introducción
+
+  h3 Desarrollando en paralelo
+  p Para contribuir en las diferentes líneas de desarrollo del proyecto, en la construcción
+    | de características funcionales, solución de bugs,
+    | e integrar las contribuciones de la comunidad al código fuente, es necesario implementar un sistema de 
+    | control de versiones que permita la gestión del los cambios realizados al proyecto
+    | e implementar un modelo de desarrollo mediante la divergencia entre ramas 
+    | (branches). En cada branch se desarrollarán paralelamente los requerimientos de la aplicación
+    | y así se abre un espacio de trabajo colaborativo entre los miembros de la organización. 
+
+section.slide.frame
+  h2.title Tabla de contenidos
+  ul
+    li
+      span Aspectos Generales
+    li
+      span Comenzando el desarrollo de proyectos en Git
+      ul
+        li
+          span Seleccionando el cliente
+          ul
+            li
+              span SmartGit
+        li
+          span Creando el repositorio local de desarrollo
+          ul
+            li
+              span Conectándose a GitHub
+            li
+              span Clonando el repositorio
+            li
+              span Seleccionando o creando el branch de trabajo
+            li
+              span Escribiendo un commit
+    
+    
+section.slide.frame
+  h2.title Aspectos Generales
+  p Aunque el proyecto puede estar distribuido entre uno o varios servidores, se usa por convención
+    | el nombre de 
+    em origin 
+    | al repositorio primario centralizado.
+    | Cada uno de los miembros del equipo de desarrollo tendrá una 
+    | copia de este repositorio en su ambiente local de desarrolo, el cual podrá ser obtenido del origen 
+    | clonando el proyecto a través de la url en donde se encuentre hosteado.
+  p Git lleva un registro de cada uno de los cambios realizados en el código fuente a través del commit, creando
+    | una imagen que contiene el 
+    | estado funcional de la aplicación en nuestro ambiente local de desarrollo y conforma  
+    | de un historial de commits en función del tiempo. Cada commit se enlaza con el anterior permitiéndonos retroceder en el tiempo y reestablecer un estado anterior de la aplicación. 
+  p Durante el desarrollo estaremos continuamente sincronizando (fetch), actualizando (pull) y enviando
+    | nuestros cambios de regreso al origen (push), sin olvidarnos que para hacer push, tendremos que 
+    | haber realizado uno o varios commits en nuestro branch de trabajo.
+  p Este instructivo, nos guiará a través de esta dinámica de desarrollo colaborativo y aprenderemos
+    | como usar los comandos de Git mediante una interface gráfica, daremos un recorrido por cada uno de estos 
+    | comandos y lo llevaremos a la práctica con ejemplos.
+  #foot-note
+    h4 Glosario
+    p Repositorio: En sistemas de control de versiones, el repositorio se refiere a la estructura de datos usualmente almacenados en un servidor, que contiene, el set de archivos y directorios, registro del histórico de cambios, el set de commits y las referencias a cada uno de ellos.
+section.slide.frame
+  h2.title Comenzando el desarrollo de proyectos en Git
+  p No está de más decir, que Git debe encontrarse instalado en nuestro ambiente de desarrollo, Para 
+    | usuarios de GNU Linux, este podrá ser descargado desde los repositorios oficiales mediante el gestor 
+    | de paquetes de la distribución. Los usuarios de ambientes Windows pueden descargar Git desde el 
+    a(href='http://msysgit.github.com') sitio oficial
+
+  p Debian / Ubuntu
+  pre
+    code
+      | # apt-get uptate
+      | # apt-get install git
+  p Rethat / Fedora / CentOS
+  pre
+    code
+      | # sudo yum install -y git
+  p Archlinux
+  pre
+    code
+      | # pacman -Sy git
+
+  p Desde este punto, Git ya nos ofrece un set de comandos para comenzar con el desarrollo en paralelo
+    | en nuestro proyecto de software colaborativo el cual podremos usar desde la consola.
+section.slide.frame
+  h2.title Seleccionando el cliente
+  p Git es una herramienta que provee un set de comandos para el manejo del proyecto, aunque también 
+    | existen varias interfaces gráficas que se pueden adaptar a nuestras necesidades permitiendonos
+    | conformar un ambiente de desarrollo eficaz. En esta oportunidad, utilizaremos 
+    | SmartGit como interface gráfica para la gestión de Git. 
+section.slide.frame
+  h2.title SmartGit
+  p Es un excelente front end para el manejo de Git, funciona tanto en GNU Linux como Windows y posee
+    | una versión gratuita para usos no comerciales. Smart Git puede ser descargado desde el 
+    a(href='http://syntevo/smartgit/index.html') sitio oficial
+  p SmartGit ofrece una representación visual del estado del proyectos, su interface está 
+    | dividida en secciones que presentan la estructura de directorios, lista de archivos
+    | según su estado, comparación (diff) de los archivos 
+    | modificados, lista de commits disponibles para enviar (push) al repositorio remoto y 
+    | el registro de los mensajes de salida de la consola luego de ejecutar una acción. 
+  img(src='/images/smart-git-ide.png', style='width:70%;')
+section.slide.frame
+  h2.title Creando el repositorio local de desarrollo
+  p Listo nuestro ambiente para el desarrollo de aplicaciones con Git, procederemos a obtener el código
+    | fuente del repositorio, los siguientes pasos nos llevarán a través del proceso hasta realizar nuestro primer commit.
+  ul
+    li
+      span Conectándose a GitHub
+    li
+      span Clonando el repositorio
+    li
+      span Seleccionando o creando el branch de trabajo
+    li
+      span Escribiendo un commit
+section.slide.frame
+  h2.title Conectándose a Github
+  p En el proceso inicial de instalación, SmartGit recoje la información del usuario para conectarse
+    | a diferentes servicios de hosting que alojan los proyectos, podemos seleccionar a GitHub entre
+    | otros proveedores.
+    | Si los datos de acceso no fueron ingresados en esta instancia, lo podremos hacer luego, ingresando
+    | al menu Editar, Preferencias, Proveedores de Hosting, GitHub.
+  img(src='/images/conectarse-a-github.png', style='width: 70%')
+section.slide.frame
+  h2.title Clonando el repositorio 
+  p En el escenario en el cual un usuario de la comunidad quisiera realizar cambios al código, puede
+    | hacer fork el repositorio creando un nuevo proyecto en su cuenta de GitHub, el desarrollador podrá crear
+    | sus desarrollos y contribuciones para después solicitar su integración al repositorio oficial mediante un pull-request.
+  p Para el caso de los desarrolladores explicitamente definidos como contribuidores del proyecto,
+    | Debemos clonar el repositorio directamente del proyecto oficial y así se podrán realizar las contribuciones
+    | directamente sobre el.
+  p Este procedimiento se realiza desde SmartGit accediendo al menu Proyecto, Clonar, luego especificamos 
+    | la url remota de donde se obtendŕa el código fuente.
+  p En el siguiente paso definiremos el directorio en donde el código fuente será almacenado (Git crea
+    | este directorio por nosotros), si nuestro servidor Web es XAMPP lo guardaremos en el directorio DocumentRoot htdocs
+  p Una vez ejecutada la orden para clonar el repositorio, se creará un nuevo proyecto en SmartGit 
+  img(src='/images/clonar-repositorio-remoto.png', style='width: 70%')
+section.slide.frame
+  h2.title Ventana de salida de SmartGit
+  p Algo de lo que tenemos que estar atentos, es de la información que se  muestra en la ventana
+    | de salida de la interface gráfica, cualquier comando que ejecutemos tendrá un mensaje que nos
+    | permitirá saber si se realizó correctamente o no, también ofrecerá información adicional que nos será 
+    | de utilidad en casos, por ejemplo,  errores provenientes de conflictos en el código fuente al momento
+    | de integrar cambios a nuestro ambiente de desarrollo, o problemas de conectividad con el host remoto.
+  img(src='/images/clonar-repositorio-remoto-output.png')
+
+section.slide.frame
+  h2.title Seleccionando o creando el branch de trabajo
+  p En Git, los branches son usados para desarrollar diferentes características de la 
+    | aplicación. Cuando el estado de la característica o branch sea funcionalmente estable, podrá 
+    | ser integrado al branch principal o branch de soporte del cual halla divergido.
+  p Los branches principales de desarrollo tendrán un tiempo de vida permanente y sostendrán dos 
+    | tipos de código, el código listo para producción (master) y el código con los últimos cambios de 
+    | desarrollo (development) el branch development también es llamado branch de integración porque reune
+    | las demás características desarrolladas en los branches de soporte.
+  p El uso de branches de soporte permite a los miembros de los equipos contribuir en forma paralela al
+    | desarrollo, realizar un fácil seguimiento a las características, preparar lanzamientos a producción hasta
+    | que se alcance un estado funcional estable de la aplicación,
+    | o solucionar pequeños errores en caliente (hotfixes) que se presenten en el código estable del branch master.
+    | Este tipo de branches suelen tener un tiempo de vida temporal y posteriormente podrán ser eliminados luego
+    | de su integración al branch de desarrollo.
+
+section.slide.frame
+  h2.title Creando un nuevo branch
+  h3
+  p En Smart git presionando la tecla F7 aparecerá un diálogo que permite introducir el nombre para
+    | el nuevo branch, 
+    img(src='/images/crear-branch.png', style='width:70%')
+section.slide.frame
+  p Una vez creado el branch se podrán tomar dos acciones
+  ul
+    li
+      span Crear el branch
+    li
+      span Crear el branch y cambiarse a el
+  p Tomaremos la primera opción, luego nos cambiaremos a el nuevo branch development a través del botón 
+    em switch
+  img(src='/images/boton-switch.png')
+  p Este branch será creado en el repositorio remoto cuando realicemos push de los commits realizados  
+section.slide.frame
+  p Seleccionamos el branch en el cual vamos a trabajar
+  img(src='/images/seleccionar-branch.png')
+section.slide.frame
+  p En la sección de directorios, Smart Git indicará que ya nos encontramos en el nuevo branch de trabajo
+  img(src='/images/nuevo-branch-de-trabajo.png')
+  ul
+    li
+      span A partir de este punto los cambios que realicemos dentro de este branch afectarán el código fuente 
+        | en la linea de desarrollo y no alterará el estado de producción de la aplicación en el branch 
+        | master del repositorio.
+    li
+      span Como el desarrollo tiene diversos aspectos y características funcionales, cada uno de ellos podrá ser
+        | establecido en un branch independiente.
+    li
+      span Estos cambios deben funcionar de manera estable para poder ser integrados a la línea de 
+        | desarrollo principal (development) o de soporte (feature)
+section.slide.frame
+  h2.title Como podemos representar este esquema de desarrollo en git?
+  img(src='/images/branch-primario-soporte-features.png')
+section.slide.frame
+  p Las características o acciones para solución a issues se integran al branch principal de desarrollo
+  img(src='/images/branch-primario-features.png')
+
+section.slide.frame
+  h2.title Escribiendo el commit
+  p
+    em Un commit describe un cambio lógico realizado en el código de la aplicación
+    | y debe responder a estos cuestionamientos
+  ul
+    li
+      span Porqué es necesario
+    li
+      span Como es abordado
+    li
+      span Cuales son sus efectos
+
+section.slide.frame
+  h2 Porqué es necesario
+  p Cuando trabajamos en una característica o parte funcional de nuestra aplicación,
+    | continuamente escribimos código y modificamos uno o varios archivos de la estructura de datos
+    | del proyecto. Estos cambios corresponden a lógicas de funcionamiento que pueden ser descritas
+    | a través de mensajes cortos.
+
+script
+  $(document).ready(function(){
+    $.deck('.slide');  
+  });
