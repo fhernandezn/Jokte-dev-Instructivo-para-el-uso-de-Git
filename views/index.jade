@@ -242,5 +242,12 @@ section.slide.frame
 
 script
   $(document).ready(function(){
-    $.deck('.slide');  
+    $.deck('.slide');
+
+    $('em#tooltip-note').tooltip({
+      position: 'center right',
+      offset: [10, 2],
+      effect: 'fade',
+      opacity: 1 
+    });
   });
