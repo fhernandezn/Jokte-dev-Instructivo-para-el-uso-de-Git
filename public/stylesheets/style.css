@@ -18,6 +18,19 @@ p {
   text-align: justify;
 }
 
+.tooltip {
+  display: none;
+  background-color: rgba(0,0,0,0.8);  
+  color: white;
+  padding: 5px;
+  width: 450px;
+  text-align: left;
+  border: 2px solid white;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #111;
+}
+
 a {
   color: #00B7FF;
 }
