@@ -245,9 +245,11 @@ script
     $.deck('.slide');
 
     $('em#tooltip-note').tooltip({
-      position: 'center right',
+      position: 'bottom center',
       offset: [10, 2],
       effect: 'fade',
       opacity: 1 
-    });
+      //FIXME: El ajuste dinámico no es muy flexible cuando el texto de referencia
+      //      se parte en dos líneas
+    }).dynamic({right:{direction: 'bottom'}});
   });
