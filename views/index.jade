@@ -9,7 +9,14 @@ section.slide.frame
   p Para contribuir a las diferentes líneas de desarrollo del proyecto 
     a(href='https://github.com/JokteLatinoamerica/jokte-cms') Jokte!
     | , a través de la  construcción
-    | de características funcionales, solución de bugs,
+    | de características funcionales, solución de 
+    em#tooltip-note bugs  
+    em.tooltip 
+      | Bug: con este término se conoce a los errores o fallos en el software que produce un
+      | resultado inesperado, incorrecto o comportamiento no deseado, estos errores se detectan
+      | en tiempo de ejecución de la aplicación a modo de testing o modo de uso en producción
+      | Cuando un bug es detectado, debe ser reportado en forma detallada mediante un reporte
+      | de error o issue en GitHub.
     | e integrar las contribuciones de la comunidad al código fuente, es necesario implementar un sistema de 
     | control de versiones que permita la gestión del los cambios realizados al proyecto
     | e implementar un modelo de desarrollo mediante la divergencia entre ramas 
@@ -18,12 +25,7 @@ section.slide.frame
     | y así se abre un espacio de trabajo colaborativo entre los miembros de la organización. 
   #foot-note
     h4 Glosario
-    p Bug: con este término se conoce a los errores o fallos en el sóftware que produce un resultado
-      | inesperado, incorrecto o comportamiento no deseado, estos errores de detectan en el tiempo
-      | de ejecución de la aplicación a modo de testing o modo de uso en producción. Cuando un bug
-      | es detectado, debe ser reportado en forma detallada mediante un reporte de error o issue
-      | en Github
-  
+
 
 section.slide.frame
   h2.title Tabla de contenidos
@@ -56,8 +58,14 @@ section.slide.frame
   p Aunque el proyecto puede estar distribuido entre uno o varios servidores, se usa por convención
     | el nombre de 
     em origin 
-    | al repositorio primario centralizado.
-    | Cada uno de los miembros del equipo de desarrollo tendrá una 
+    | al 
+    em#tooltip-note repositorio primario centralizado.
+    em.tooltip
+      | Repositorio: En sistemas de control de versiones, el repositorio se refiere a la 
+      | estructura de datos usualmente almacenados en un servidor, que contiene, el set de 
+      | archivos y directorios, registro del histórico de cambios, el set de commits y 
+      | las referencias a cada uno de ellos.'
+  p Cada uno de los miembros del equipo de desarrollo tendrá una 
     | copia de este repositorio en su ambiente local de desarrolo, el cual podrá ser obtenido del origen 
     | clonando el proyecto a través de la url en donde se encuentre hosteado.
   p Git lleva un registro de cada uno de los cambios realizados en el código fuente a través del commit, creando
@@ -71,8 +79,6 @@ section.slide.frame
     | como usar los comandos de Git mediante una interface gráfica, daremos un recorrido por cada uno de estos 
     | comandos y lo llevaremos a la práctica con ejemplos.
   #foot-note
-    h4 Glosario
-    p Repositorio: En sistemas de control de versiones, el repositorio se refiere a la estructura de datos usualmente almacenados en un servidor, que contiene, el set de archivos y directorios, registro del histórico de cambios, el set de commits y las referencias a cada uno de ellos.
 section.slide.frame
   h2.title Comenzando el desarrollo de proyectos en Git
   p No está de más decir, que Git debe encontrarse instalado en nuestro ambiente de desarrollo, Para 
