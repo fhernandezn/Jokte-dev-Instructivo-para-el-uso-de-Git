@@ -71,6 +71,28 @@ a {
   text-shadow: -1px -1px 1px rgba(100,100,100,0.5), -1px 1px 1px rgba(0,0,0,0.4);
 }
 
+.col-left {
+  float: left;
+  width: 50%;
+}
+
+.col-left .content {
+  border-right: 1px solid grey;
+}
+
+.col-right {
+  float: right;
+  width: 50%;
+}
+
+.content {
+  margin: 5px 0 5px 0;
+  padding: 0 10px 0 10px;
+}
+
+.clearfix {
+  clear: both;
+}
 
 .img-home {
   display: block;
