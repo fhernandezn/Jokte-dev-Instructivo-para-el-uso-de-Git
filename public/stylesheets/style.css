@@ -4,7 +4,6 @@ html {
 
 body {
   margin: 0;
-  background: #e4955c;
   padding: 10px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -65,6 +64,7 @@ a {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   box-shadow: -1px -2px 10px #c9c9c9, 1px 2px 15px #c9c9c9;
+  border: 2px solid silver;
 }
 
 .title {
@@ -84,6 +84,6 @@ a {
   margin-top: -275px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  box-shadow: -1px -2px 3px #fff, 3px 5px 10px #ccc, 6px 0 25px #eee;
+  box-shadow: -1px -2px 10px #c9c9c9, 1px 2px 15px #c9c9c9;
 }
 
