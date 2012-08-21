@@ -83,8 +83,8 @@ section.slide.frame
         | una imagen que contiene el 
         | estado funcional de la aplicación en nuestro ambiente local de desarrollo y conforma  
         | de un historial de commits en función del tiempo. Cada commit se enlaza con el anterior permitiéndonos retroceder en el tiempo y reestablecer un estado anterior de la aplicación. 
-      p Durante el desarrollo estaremos continuamente sincronizando (fetch), actualizando (pull) y enviando
-        | nuestros cambios de regreso al origen (push), sin olvidarnos que para hacer push, tendremos que 
+      p Durante el desarrollo estaremos continuamente sincronizando <em class='important'>fetch</em>, actualizando <em class='important'>pull</em> y enviando
+        | nuestros cambios de regreso al origen <em class='important'>push</em>, sin olvidarnos que para hacer push, tendremos que 
         | haber realizado uno o varios commits en nuestro branch de trabajo.
   .col-right
     .content
@@ -124,9 +124,9 @@ section.slide.frame
   .col-left
     .content
       p Git es una herramienta que provee un set de comandos para el manejo del proyecto, aunque también 
-        | existen varias interfaces gráficas que se pueden adaptar a nuestras necesidades permitiendonos
+        | existen varias interfaces gráficas que se pueden adaptar a nuestras necesidades permitiéndonos
         | conformar un ambiente de desarrollo eficaz. En esta oportunidad, utilizaremos 
-        | SmartGit como interface gráfica para la gestión de Git. 
+        | <em class='important'>SmartGit</em> como interface gráfica para la gestión de Git. 
   .col-right
     .content
   .clearfix
@@ -136,12 +136,12 @@ section.slide.frame
   .col-left
     .content
       p Es un excelente front end para el manejo de Git, funciona tanto en GNU Linux como Windows y posee
-        | una versión gratuita para usos no comerciales. Smart Git puede ser descargado desde el 
+        | una versión gratuita para usos no comerciales. SmartGit puede ser descargado desde el 
         a(href='http://syntevo/smartgit/index.html') sitio oficial
       p SmartGit ofrece una representación visual del estado del proyectos, su interface está 
         | dividida en secciones que presentan la estructura de directorios, lista de archivos
-        | según su estado, comparación (diff) de los archivos 
-        | modificados, lista de commits disponibles para enviar (push) al repositorio remoto y 
+        | según su estado, comparación <em class='important'>diff</em> de los archivos 
+        | modificados, lista de commits disponibles para enviar <em class='important'>push</em> al repositorio remoto y 
         | el registro de los mensajes de salida de la consola luego de ejecutar una acción. 
   .col-right
     .content
@@ -153,7 +153,7 @@ section.slide.frame
   .col-left
     .content
       p Listo nuestro ambiente para el desarrollo de aplicaciones con Git, procederemos a obtener el código
-        | fuente del repositorio, los siguientes pasos nos llevarán a través del proceso hasta realizar nuestro primer commit.
+        | fuente del repositorio, los siguientes pasos nos llevarán a través del proceso hasta realizar nuestro primer <em class='important'>commit</em>.
       ul
         li
           span Conectándose a GitHub
@@ -186,8 +186,8 @@ section.slide.frame
   .col-left
     .content
       p En el escenario en el cual un usuario de la comunidad quisiera realizar cambios al código, puede
-        | hacer fork el repositorio creando un nuevo proyecto en su cuenta de GitHub, el desarrollador podrá crear
-        | sus desarrollos y contribuciones para después solicitar su integración al repositorio oficial mediante un pull-request.
+        | hacer <em class='important'>fork</em> el repositorio creando un nuevo proyecto en su cuenta de GitHub, el desarrollador podrá crear
+        | sus desarrollos y contribuciones para después solicitar su integración al repositorio oficial mediante un <em class='important'>pull-request</em>.
       p Para el caso de los desarrolladores explicitamente definidos como contribuidores del proyecto,
         | Debemos clonar el repositorio directamente del proyecto oficial y así se podrán realizar las contribuciones
         | directamente sobre el.
@@ -223,13 +223,13 @@ section.slide.frame
         | aplicación. Cuando el estado de la característica o branch sea funcionalmente estable, podrá 
         | ser integrado al branch principal o branch de soporte del cual halla divergido.
       p Los branches principales de desarrollo tendrán un tiempo de vida permanente y sostendrán dos 
-        | tipos de código, el código listo para producción (master) y el código con los últimos cambios de 
-        | desarrollo (development) el branch development también es llamado branch de integración porque reune
+        | tipos de código, el código listo para producción <em class='important'>master</em> y el código con los últimos cambios de 
+        | desarrollo <em class='important'>development</em> el branch development también es llamado branch de integración porque reune
         | las demás características desarrolladas en los branches de soporte.
       p El uso de branches de soporte permite a los miembros de los equipos contribuir en forma paralela al
-        | desarrollo, realizar un fácil seguimiento a las características, preparar lanzamientos a producción hasta
+        | desarrollo, realizar un fácil seguimiento a las características desarrolladas, preparar lanzamientos a producción hasta
         | que se alcance un estado funcional estable de la aplicación,
-        | o solucionar pequeños errores en caliente (hotfixes) que se presenten en el código estable del branch master.
+        | o solucionar pequeños errores en caliente <em class='important'>hotfixes</em> que se presenten en el código estable del branch master.
         | Este tipo de branches suelen tener un tiempo de vida temporal y posteriormente podrán ser eliminados luego
         | de su integración al branch de desarrollo.
   .col-right

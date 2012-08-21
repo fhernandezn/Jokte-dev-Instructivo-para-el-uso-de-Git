@@ -30,8 +30,15 @@ p {
   box-shadow: 0 0 20px #111;
 }
 
-a {
-  color: #00B7FF;
+.important {
+  background: #c8ea89;
+  padding: 0 3px;
+  margin: 0 3px;
+  border: 1px solid green;
+  box-shadow: 0 0 2px green;
+  font-size: 0.9em;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 #home {
