@@ -10,24 +10,23 @@ section.slide.frame
       p Para contribuir a las diferentes líneas de desarrollo del proyecto 
         a(href='https://github.com/JokteLatinoamerica/jokte-cms') Jokte!
         | , a través de la  construcción
-        | de características funcionales, solución de 
-        em#tooltip-note bugs  
+        | de características funcionales, estilos, markup, solución de 
+        em#tooltip-note bugs
         em.tooltip 
           | <b>Bug:</b> con este término se conoce a los errores o fallos en el software que produce un
           | resultado inesperado, incorrecto o comportamiento no deseado, estos errores se detectan
-          | en tiempo de ejecución de la aplicación a modo de testing o modo de uso en producción
-          | Cuando un bug es detectado, debe ser reportado en forma detallada mediante un reporte
+          | en tiempo de ejecución de la aplicación a modo de testing o modo de uso en producción,
+          | cuando un bug es detectado, debe ser reportado en forma detallada mediante un reporte
           | de error o issue en GitHub.
-        | e integrar las contribuciones de la comunidad al código fuente, es necesario implementar un sistema de 
-        | control de versiones que permita la gestión del los cambios realizados al proyecto
+        |  ,documentación, e integrar las contribuciones de la comunidad al código fuente, es necesario implementar un sistema de 
+        | control de versiones que permita la gestión de los cambios realizados al proyecto
         | e implementar un modelo de desarrollo mediante la divergencia entre ramas 
-        | (branches). 
-      p En cada branch se desarrollarán paralelamente los requerimientos de la aplicación
-        | y así se abre un espacio de trabajo colaborativo entre los miembros de la organización. 
+        | <em class='important'>branches</em>. 
+      p En cada branch se desarrollarán paralelamente los requerimientos de la aplicación,
+        | y así se abre un espacio de trabajo colaborativo entre el grupo de desarrolladores. 
 
   .col-right
     .content
-      h2 otro texto
   .clearfix
 
 
@@ -70,7 +69,7 @@ section.slide.frame
         | el nombre de 
         em origin 
         | al 
-        em#tooltip-note repositorio 
+        em#tooltip-note repositorio
         em.tooltip
           | <b>Repositorio:</b> En sistemas de control de versiones, el repositorio se refiere a la 
           | estructura de datos usualmente almacenados en un servidor, que contiene, el set de 
@@ -97,20 +96,17 @@ section.slide.frame
   h2.title Comenzando el desarrollo de proyectos en Git
   .col-left
     .content
-      // FIXME: hay que refactorizar este texto
-      p No está de más decir, que Git debe encontrarse instalado en nuestro ambiente de desarrollo, Para 
+      p Git debe encontrarse instalado en nuestro ambiente de desarrollo, Para 
         | usuarios de GNU Linux, este podrá ser descargado desde los repositorios oficiales mediante el gestor 
         | de paquetes de la distribución. Los usuarios de ambientes Windows pueden descargar Git desde el 
         a(href='http://msysgit.github.com') sitio oficial
-      p Desde este punto, Git ya nos ofrece un set de comandos para comenzar con el desarrollo en paralelo
-        | en nuestro proyecto de software colaborativo el cual podremos usar desde la consola.
-  .col-right
-    .content
       p Debian / Ubuntu
       pre
         code
           | # apt-get uptate
           | # apt-get install git
+  .col-right
+    .content
       p Rethat / Fedora / CentOS
       pre
         code
@@ -119,6 +115,8 @@ section.slide.frame
       pre
         code
           | # pacman -Sy git
+      p Desde este punto, Git ya nos ofrece un set de comandos para comenzar con el desarrollo en paralelo
+        | en nuestro proyecto de software colaborativo el cual podremos usar desde la consola.
   .clearfix
 
 section.slide.frame
@@ -285,7 +283,7 @@ section.slide.frame
   .clearfix
 
 section.slide.frame
-  h2.title Como podemos representar este esquema de desarrollo en git?
+  h2.title Como podemos representar el esquema de desarrollo de Jokte! git?
   .col-left
     .content
       img(src='/images/branch-primario-soporte-features.png')
