@@ -307,18 +307,52 @@ section.slide.frame
           span Como es abordado
         li
           span Cuales son sus efectos
-  .col-right
-    .content
-  .clearfix
-
-section.slide.frame
-  h2 Porqué es necesario
-  .col-left
-    .content
+      h3 Porqué es necesario
       p Cuando trabajamos en una característica o parte funcional de nuestra aplicación,
         | continuamente escribimos código y modificamos uno o varios archivos de la estructura de datos
         | del proyecto. Estos cambios corresponden a lógicas de funcionamiento que pueden ser descritas
         | a través de mensajes cortos.
+      p Una vez nuestros cambios hayan sido probados y verifiquemos que su funcionamiento sea
+        | el deseado, debemos agregarlos <em class='important'>stage</em> para la etapa de commit que nos permitirá
+        | realizar la identificación y descripción de las modificaciones.
+      p En Smart git se puede observar el estado en el cual se encuentra el archivo o los archivos recientemente
+        | modificados
+      p Estos estados corresponden al estado del 
+        em#tooltip-note indice
+        em.tooltip
+          | <b>Indice o Head:</b>
+        | <em class='important'>head</em> y al estado del 
+        em#tooltip-note arbol
+        em.tooltip
+          | <b>Arbol:</b> Los directorios están representados por el objeto llamado arbol, 
+          | que contiene la estructura de directorios, archivos y descripción de cada uno de ellos (nombre de archivo, modo de acceso, etc), también hace referencia a otros arboles con su estructura.
+        |  de trabajo en el cual nos encontramos, en donde se encuentra la referencia al código fuente.
+      h3 Reconociendo los estados
+      p Cuando realizamos un cambio, el estado del arbol de trabajo será
+        em modificado
+        | <em class='important'>modified</em>  
+      br
+      img(src='/images/estado-index-unchanged.png')
+      p luego incluiremos este archivo al índice del arbol de trabajo 
+      br
+      img(src='/images/boton-stage.png')
+      p y con esto apuntamos el índice al nuevo estado del archivo en donde el estado de este índice cambia de <em class='important'>unchanged</em> a <em class='important'>modified</em>.
+      br
+      img(src='/images/estado-index-modified.png')
+      p Luego de esto, podremos escribir el commit para identificar los cambios realizados en el nuevo estado de la aplicación.
+  .col-right
+    .content
+      img(src='/images/escribir-commit.png')
+      pre
+        code [etiqueta] breve descripción de como fue abordada la situación, solucioné algo con este commit
+      pre
+        code git commit -m '[etiqueta] breve descripción de como fue abordada la situación, solucioné algo con este commit'
+  .clearfix
+
+section.slide.frame
+  h3 Recursos Web
+  .col-left
+    .content
   .col-right
     .content
   .clearfix
