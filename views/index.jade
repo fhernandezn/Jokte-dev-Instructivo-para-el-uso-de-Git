@@ -82,7 +82,7 @@ section.slide.frame
       p Git lleva un registro de cada uno de los cambios realizados en el código fuente a través del commit, creando
         | una imagen que contiene el 
         | estado funcional de la aplicación en nuestro ambiente local de desarrollo y conforma  
-        | de un historial de commits en función del tiempo. Cada commit se enlaza con el anterior permitiéndonos retroceder en el tiempo y reestablecer un estado anterior de la aplicación. 
+        | un historial de commits en función del tiempo. Cada commit se enlaza con el anterior permitiéndonos retroceder en el tiempo y reestablecer un estado anterior de la aplicación. 
       p Durante el desarrollo estaremos continuamente sincronizando <em class='important'>fetch</em>, actualizando <em class='important'>pull</em> y enviando
         | nuestros cambios de regreso al origen <em class='important'>push</em>, sin olvidarnos que para hacer push, tendremos que 
         | haber realizado uno o varios <em class='important'>commits</em> en nuestro branch de trabajo.
@@ -110,7 +110,7 @@ section.slide.frame
       p Rethat / Fedora / CentOS
       pre
         code
-          | # sudo yum install -y git
+          | # yum install -y git
       p Archlinux
       pre
         code
@@ -138,8 +138,8 @@ section.slide.frame
       p Es un excelente front end para el manejo de Git, funciona tanto en GNU Linux como Windows y posee
         | una versión gratuita para usos no comerciales. SmartGit puede ser descargado desde el 
         a(href='http://syntevo/smartgit/index.html') sitio oficial
-      p SmartGit ofrece una representación visual del estado del proyectos, su interface está 
-        | dividida en secciones que presentan la estructura de directorios, lista de archivos
+      p SmartGit ofrece una representación visual del estado del proyecto, su interface está 
+        | dividida en secciones que presentan en cada una, la estructura de directorios, lista de archivos
         | según su estado, comparación <em class='important'>diff</em> de los archivos 
         | modificados, lista de commits disponibles para enviar <em class='important'>push</em> al repositorio remoto y 
         | el registro de los mensajes de salida de la consola luego de ejecutar una acción. 
@@ -189,7 +189,7 @@ section.slide.frame
         | hacer <em class='important'>fork</em> el repositorio creando un nuevo proyecto en su cuenta de GitHub, el desarrollador podrá crear
         | sus desarrollos y contribuciones para después solicitar su integración al repositorio oficial mediante un <em class='important'>pull-request</em>.
       p Para el caso de los desarrolladores explicitamente definidos como contribuidores del proyecto,
-        | Debemos clonar el repositorio directamente del proyecto oficial y así se podrán realizar las contribuciones
+        | debemos clonar el repositorio directamente del proyecto oficial que se encuentra en GitHub y así se podrán realizar las contribuciones
         | directamente sobre el.
       p Este procedimiento se realiza desde SmartGit accediendo al menu Proyecto, Clonar, luego especificamos 
         | la url remota de donde se obtendŕa el código fuente.
@@ -219,7 +219,7 @@ section.slide.frame
   h2.title Seleccionando o creando el branch de trabajo
   .col-left
     .content
-      p En Git, los branches son usados para desarrollar diferentes características de la 
+      p En Git, los branches son usados para desarrollar diferentes características funcionales o no funcionales de la 
         | aplicación. Cuando el estado de la característica o branch sea funcionalmente estable, podrá 
         | ser integrado al branch principal o branch de soporte del cual halla divergido.
       p Los branches principales de desarrollo tendrán un tiempo de vida permanente y sostendrán dos 
@@ -308,13 +308,16 @@ section.slide.frame
         li
           span Cuales son sus efectos
       h3 Porqué es necesario
-      p Cuando trabajamos en una característica o parte funcional de nuestra aplicación,
+      p Cuando trabajamos en una característica o parte funcional de nuestra aplicación en donde 
         | continuamente escribimos código y modificamos uno o varios archivos de la estructura de datos
-        | del proyecto. Estos cambios corresponden a lógicas de funcionamiento que pueden ser descritas
+        | del proyecto. Estos cambios corresponderán a lógicas de funcionamiento que pueden ser descritas
         | a través de mensajes cortos.
+      p Es necesario que la descripción del commit, explique brevemente porque fue realizada la modificación, que
+        | efecto tuvo en la funcionalidad y a través de que o como se abordó la solución.
+      h3 Agregando cambios o parches para realizar el commit
       p Una vez nuestros cambios hayan sido probados y verifiquemos que su funcionamiento sea
-        | el deseado, debemos agregarlos <em class='important'>stage</em> para la etapa de commit que nos permitirá
-        | realizar la identificación y descripción de las modificaciones.
+        | el deseado sin olvidar que también deben funcionar de manera estable, debemos agregarlos <em class='important'>stage</em>
+        | para la etapa de commit, en donde podremos realizar la identificación y descripción de las modificaciones.
       p En Smart git se puede observar el estado en el cual se encuentra el archivo o los archivos recientemente
         | modificados
       p Estos estados corresponden al estado del 
@@ -325,15 +328,16 @@ section.slide.frame
         em#tooltip-note arbol
         em.tooltip
           | <b>Arbol:</b> Los directorios están representados por el objeto llamado arbol, 
-          | que contiene la estructura de directorios, archivos y descripción de cada uno de ellos (nombre de archivo, modo de acceso, etc), también hace referencia a otros arboles con su estructura.
-        |  de trabajo en el cual nos encontramos, en donde se encuentra la referencia al código fuente.
+          | que contiene la estructura de directorios, archivos y descripción de cada uno de ellos (nombre de archivo, modo de acceso, etc),
+          | también hace referencia a otros arboles con su estructura propia.
+        |  de trabajo en el cual nos encontramos, en donde se está la referencia a nuestro código fuente.
+  .col-right
+    .content
       h3 Reconociendo los estados
-      p Cuando realizamos un cambio, el estado del arbol de trabajo será
-        em modificado
-        | <em class='important'>modified</em>  
+      p Cuando realizamos un cambio, el estado del arbol de trabajo será modificado <em class='important'>modified</em>  
       br
       img(src='/images/estado-index-unchanged.png')
-      p luego incluiremos este archivo al índice del arbol de trabajo 
+      p luego agregamos este archivo al índice del arbol de trabajo para la etapa del commit 
       br
       img(src='/images/boton-stage.png')
       p y con esto apuntamos el índice al nuevo estado del archivo en donde el estado de este índice cambia de <em class='important'>unchanged</em> a <em class='important'>modified</em>.
