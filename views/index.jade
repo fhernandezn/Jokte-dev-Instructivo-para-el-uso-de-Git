@@ -67,7 +67,7 @@ section.slide.frame
     .content
       p Aunque el proyecto puede estar distribuido entre uno o varios servidores, se usa por convención
         | el nombre de 
-        em origin 
+        em.important origin
         | al 
         em#tooltip-note repositorio
         em.tooltip
@@ -85,7 +85,7 @@ section.slide.frame
         | de un historial de commits en función del tiempo. Cada commit se enlaza con el anterior permitiéndonos retroceder en el tiempo y reestablecer un estado anterior de la aplicación. 
       p Durante el desarrollo estaremos continuamente sincronizando <em class='important'>fetch</em>, actualizando <em class='important'>pull</em> y enviando
         | nuestros cambios de regreso al origen <em class='important'>push</em>, sin olvidarnos que para hacer push, tendremos que 
-        | haber realizado uno o varios commits en nuestro branch de trabajo.
+        | haber realizado uno o varios <em class='important'>commits</em> en nuestro branch de trabajo.
   .col-right
     .content
       p Este instructivo, nos guiará a través de esta dinámica de desarrollo colaborativo y aprenderemos
@@ -254,7 +254,7 @@ section.slide.frame
   .col-right
     .content
       p Tomaremos la primera opción, luego nos cambiaremos a el nuevo branch development a través del botón 
-        em switch
+        em.important switch
       img(src='/images/boton-switch.png')
       p Este branch será creado en el repositorio remoto cuando realicemos push de los commits realizados  
       p Seleccionamos el branch en el cual vamos a trabajar
