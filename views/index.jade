@@ -143,6 +143,13 @@ section.slide.frame
         | según su estado, comparación <em class='important'>diff</em> de los archivos 
         | modificados, lista de commits disponibles para enviar <em class='important'>push</em> al repositorio remoto y 
         | el registro de los mensajes de salida de la consola luego de ejecutar una acción. 
+      p Este front end de Git integra también los comandos que nos permitirá realizar taréas
+        | que requieren de mayor atención al ejecutarlas y que se presentan cuando es necesario integrar cambios entre branches
+        | <em class='important'>merge</em>, retornar a estados anteriores de la aplicación <em class='important'>reset</em>,
+        | o definir <em class='important'>tags</em> que señalen puntos importantes como las versiones del proyecto. 
+        | Estos temas los desarrolaremos más adelante, por el momento podemos destacar una característica
+        | importante de SmartGit, y es la ventana de <em class='important'>log</em> de cambios la cual nos 
+        | permitirá realizar cada una de estas tareas mencionadas. 
   .col-right
     .content
       img(src='/images/smart-git-ide.png')
@@ -353,6 +360,84 @@ section.slide.frame
         code [etiqueta] breve descripción de como fue abordada la situación, solucioné algo con este commit
       pre
         code git commit -m '[etiqueta] breve descripción de como fue abordada la situación, solucioné algo con este commit'
+  .col-right
+    .content
+      p El mensaje de commit, no tiene un formato estandárizado para su representación, pero como lo mencionamos 
+        | anteriormente, debe responder determinadas cuestiones. Como alternativa también podemos identificar 
+        | cada commit con una <em class='important'>etiqueta </em> o nombre genérico que represente grupos de commits encaminados a solucionar algo
+        | más específico.
+      p Un ejemplo podría ser al desarrollar una extensión que solicite una información que será guardada en la base de datos
+        | y que posteriormente permita consultar y visualizar los datos guardados. Asumamos que la información que se va a ingresar, corresponde
+        | a usuarios.
+      p Este problema nos lleva a pensar que esta característica funcional de la aplicación, deberá ser desarrollada en un
+        | branch independiente que podemos llamar <em class='important'>modulo-usuarios</em>, este desarrollo tendrá varias
+        | lógicas de funcionamiento que permitan la construcción del módulo. Como cada lógica de funcionamiento corresponde
+        | a un commit, entonces definiremos un nombre de etiqueta más específico que abarque una serie de commits para conseguir
+        | una de las tantas funcionalidades del módulo. Por Ejemplo:
+      pre 
+        code
+          [usuario] agrego el controlador de registro
+          [usuario] agrego los campos del formulario en la vista
+          [usuario] defino los parámetros en el modelo
+          [usuario] guardo los datos
+  .clearfix
+
+section.slide.frame
+  .col-left
+    .content
+      pre
+        code
+          [consulta] agrego el controlador para la busqueda de un usuario
+          [consulta] utilizo el valor del input de la vista como parametro para la busqueda
+          [fix] corrijo el metodo que consulta un usuario, no encontraba la tabla
+          [consulta] valido en el cliente los datos introducidos
+          [consulta] muestro el resultado en la vista
+      pre
+        code
+          [usuarios] agrego el controlador para la consulta de todos los usuarios
+          [usuarios] construyo el markup base para mostrar los usuarios en una tabla
+          [usuarios] itero en el resultado de la consulta, utilizo los parametros y defino las filas de la tabla
+      p De acuerdo a nuestro objetivo como desarrolladores dentro del proyecto, podremos utilizar cualquier otra etiqueta que nos 
+        | permita describir el contexto de la contribución que hacemos al código, es por esto que si nuestro 
+        | papel es el de tester y construimos una característica a modo de prueba, definimos la etiqueta 
+        | <em class='important'>test</em>, si estamos solucionando un bug, utilizamos <em class='important'>fix</em>, 
+        | si el bug corresponde a un issue reportado y es solucionado, entonces escribimos a etiqueta <em class='important'>fix #0111</em> 
+      p Tip:
+        | Es posible cerrar un issue cuando definimos el mensaje de commit con la palabra clave <em class='important'>closes</em>
+        |  y el número de issue así:
+      pre
+        code
+          [fix #0111] corrijo el metodo que consulta un usuario closes #111
+  .col-right
+    .content
+      h3 Posibles etiquetas según el contexto
+      table
+        thead
+          tr
+            th Contexto
+            th Etiqueta
+        tbody
+          tr
+            td Documentación
+            td [<em class='important'>doc</em>]
+          tr
+            td Cambios significativos al código existente
+            td [<em class='important'>refactor</em>]
+          tr
+            td Traducciones y lenguage
+            td [<em class='important'>lang</em>]
+          tr
+            td Nuevas librerías
+            td [<em class='important'>lib</em>]
+          tr
+            td Nuevas imágenes
+            td [<em class='important'>img</em>]
+          tr
+            td Solución de Bugs 
+            td [<em class='important'>fix</em>]
+          tr
+            td Características de prueba
+            td [<em class='important'>test</em>]
   .clearfix
 
 section.slide.frame
